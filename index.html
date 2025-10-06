@@ -22,13 +22,32 @@
                 font-size: 1.8rem;
             }
         }
+
+        @media (max-width: 768px) {
+        #title { max-width: 92vw; }
+        }
+
+        *, *::before, *::after { box-sizing: inherit; }
+
+        html,body {
+            height: 100%;
+        }
         body {
             background-color: black;
+            margin: 0;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            box-sizing: border-box;
         }
 
         #title {
-            width: 1000px;
-            margin: 200px auto;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* sabit genişliği kaldır, mobilde taşmayı önle: */
+            max-width: min(1000px, 92vw);
+            width: 100%;
         }
         .coming-soon {
             border: #fff solid 1px;
@@ -49,6 +68,7 @@
 
         .coming-soon h2:hover {
             box-shadow: 0 0 8px #fff;
+            cursor: default;
         }
         .coming-soon h1 {
             padding: 0 8px;
@@ -62,6 +82,7 @@
         
         .coming-soon h1:hover {
             box-shadow: 0 0 8px #fff;
+            cursor: default;
         }
     </style>
 </head>
